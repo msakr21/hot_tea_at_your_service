@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Post User', :type => :request do 
+RSpec.describe 'Create Subscription', :type => :request do 
     it 'creates a new subscription based on a json payload body then renders a json response with a success message' do
         mufasa = Customer.create(first_name: "Mufasa", last_name: "Skar", email: "mufasa@lionking.com", address: "In the jungle, the Mighty Jungle")
         simba = Customer.create(first_name: "Simba", last_name: "Mufasa", email: "simba@lionking.com", address: "In the jungle, the Mighty Jungle")

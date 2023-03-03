@@ -77,7 +77,7 @@ If by some happenstance you're uncertain how you got to this repo, here's the li
 <!-- Endpoints -->
 ### Endpoints
 
-As of the most recent PR, this API has 6 endpoints:<br />
+As of the most recent PR, this API has 3 endpoints:<br />
 1. post '/api/v1/subscriptions' which allows a customer to create a subscription
 2. get '/api/v1/subscriptions' which returns a list of custom subscriptions
 3. patch '/api/v1/subcriptions' which allows a customer to cancel a subscription

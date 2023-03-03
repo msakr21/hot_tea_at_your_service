@@ -76,6 +76,6 @@ RSpec.describe 'Create Subscription', :type => :request do
         expect(Subscription.all.length).to eq(0)
         expect(parsed_response).to be_a Hash
         expect(parsed_response.keys).to eq([:error])
-        expect(parsed_response[:error]).to eq("Woopsies! User email or tea id are either missing or incorrect!")
+        expect(parsed_response[:error]).to eq("Woopsies! Customer email or tea id are either missing or incorrect!")
     end
 end

@@ -1,15 +1,20 @@
 class Api::V1::SubscriptionsController < ApplicationController
     def index
+        if customer = Customer.find_by(email: params[:email])
+            render json: SubscriptionsSerializer.new(customer.subscriptions)
+        else
+          render json: {error: "Ummmm.... No such customer exists?"} , status: 404
+        end
     end
 
     def create
         if Customer.find_by(email: params[:email]) && Tea.find_by(id: params[:tea_id])
             customer = Customer.find_by(email: params[:email])
             tea = Tea.find(params[:tea_id])
-            customer.subscriptions.create(tea_id: tea.id, price: params[:price], frequency: params[:frequency], status: "active")
+            customer.subscriptions.create(tea_id: tea.id, title: tea.title, price: params[:price], frequency: params[:frequency], status: "active")
             render json: { "success": "Subscription created successfully"}, status: 201
         else
-            render json: {error: "Woopsies! User email or tea id are either missing or incorrect!"}
+            render json: {error: "Woopsies! Customer email or tea id are either missing or incorrect!"}
         end
     end
 

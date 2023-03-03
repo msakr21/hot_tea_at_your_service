@@ -27,7 +27,7 @@ RSpec.describe 'Cancel Subscription', :type => :request do
         simba = Customer.create(first_name: "Simba", last_name: "Mufasa", email: "simba@lionking.com", address: "In the jungle, the Mighty Jungle")
         peach = Tea.create(title: "country_peach", description: "peachy!", temperature: "hot", brew_time: "enough")
         lemon_loaf = Tea.create(title: "lemon_loaf", description: "zesty cake!", temperature: "hot", brew_time: "enough")
-        lemon_subscription = Subscription.create(customer_id: mufasa.id, tea_id: peach.id, price: "$4.99", frequency: "Monthly", status: "active")
+        peach_subscription = Subscription.create(customer_id: mufasa.id, tea_id: peach.id, price: "$4.99", frequency: "Monthly", status: "active")
 
 
         json_payload = { id: 2
